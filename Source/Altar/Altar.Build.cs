@@ -40,10 +40,7 @@ public class Altar : ModuleRules {
             "UMG",
             "VActorStateMachine",
             "VCommonUIEnhancedInputNavigation",
-            "MovieScene",
-            "MovieRenderPipelineSettings",
-            "MovieRenderPipelineCore",
-            "MovieRenderPipelineRenderPasses"
+            "MovieScene"
         });
     }
 }

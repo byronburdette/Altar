@@ -27,28 +27,29 @@ AVPairedPawn::AVPairedPawn(const FObjectInitializer& ObjectInitializer) : Super(
     this->AIControllerClass = AVPairedPawnAIController::StaticClass();
     this->TurnInPlaceAngleThreshold = 45.00f;
     this->ActorForwardPoseOffset = -20.00f;
-    this->FakeRoot = NULL;
-    this->PhysicsBodyCollider = NULL;
-    this->WorldLimitDetectionBox = NULL;
+    this->FakeRoot = CreateDefaultSubobject<USceneComponent>(TEXT("FakeRootComp"));
+    this->PhysicsBodyCollider = CreateDefaultSubobject<UCapsuleComponent>(TEXT("PhysicsBodyCollider"));
+    this->WorldLimitDetectionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Border Region Collider"));
     this->DrawnArrowMeshComponent = NULL;
-    this->StateMachineComponent = NULL;
-    this->MergedMeshComponent = NULL;
+    this->StateMachineComponent = CreateDefaultSubobject<UVPairedPawnStateMachineComponent>(TEXT("State Machine"));
+    this->MergedMeshComponent = CreateDefaultSubobject<UVMergedSkeletalMeshComponent>(TEXT("Merged Mesh Component"));
     this->StatusEffectComponent = NULL;
-    this->PairedPawnMovementComponent = NULL;
+    this->PairedPawnMovementComponent = Cast<UVPairedPawnMovementComponent>(GetCharacterMovement());
+;
     this->PawnDebugInfoWidgetComponent = NULL;
     this->EntityDetailsDebugWidgetComponent = NULL;
-    this->PhysicsControllerComponent = NULL;
-    this->AkAudioComponent = NULL;
-    this->PhysicalAnimationComponent = NULL;
-    this->CharacterFadeInOutComponent = NULL;
-    this->TESRefComponent = NULL;
-    this->TransformPairingComponent = NULL;
-    this->AnimationPairingComponent = NULL;
-    this->PawnSoundPairingComponent = NULL;
-    this->WeaponsPairingComponent = NULL;
-    this->OblivionActorStatePairingComponent = NULL;
-    this->ActorValuesPairingComponent = NULL;
-    this->ActiveEffectsPairingComponent = NULL;
+    this->PhysicsControllerComponent = CreateDefaultSubobject<UVPhysicsControllerComponent>(TEXT("PhysicsControllerComponent"));
+    this->AkAudioComponent = CreateDefaultSubobject<UVAltarAkComponent>(TEXT("AudioComponent"));
+    this->PhysicalAnimationComponent = CreateDefaultSubobject<UVPhysicalAnimationComponent>(TEXT("PhysicalAnimationComponent"));
+    this->CharacterFadeInOutComponent = CreateDefaultSubobject<UVCharacterFadeInOutComponent>(TEXT("Fade In/Out component"));
+    this->TESRefComponent = CreateDefaultSubobject<UVTESObjectRefComponent>(TEXT("TESRefComponent"));
+    this->TransformPairingComponent = CreateDefaultSubobject<UVTransformPairingComponent>(TEXT("TransformPairingComponent"));
+    this->AnimationPairingComponent = CreateDefaultSubobject<UVAnimationPairingComponent>(TEXT("Animation Pairing Component"));
+    this->PawnSoundPairingComponent = CreateDefaultSubobject<UVPawnSoundPairingComponent>(TEXT("Pawn Sound Pairing Component"));
+    this->WeaponsPairingComponent = CreateDefaultSubobject<UVWeaponsPairingComponent>(TEXT("Weapons Pairing Component"));
+    this->OblivionActorStatePairingComponent = CreateDefaultSubobject<UVCharacterStatePairingComponent>(TEXT("Oblivion Actor State Pairing Component"));
+    this->ActorValuesPairingComponent = CreateDefaultSubobject<UVActorValuesPairingComponent>(TEXT("ActorValuesPairingComponent"));
+    this->ActiveEffectsPairingComponent = CreateDefaultSubobject<UVActiveEffectsPairingComponent>(TEXT("ActiveEffectsPairingComponent"));
     this->LightingUpdateFrequency = 10.00f;
     this->CurrentLightingValue = 0.00f;
     this->CurrentLightingValueWithTorch = 0.00f;
@@ -79,7 +80,7 @@ AVPairedPawn::AVPairedPawn(const FObjectInitializer& ObjectInitializer) : Super(
     this->LifeState = EVLifeState::Alive_FromSpawn;
     this->OblivionAnimAction = EVAnimAction::ANIM_ACTION_NONE;
     this->bInDebugPerceptionMode = false;
-    this->AIBlackboard = NULL;
+    this->AIBlackboard = CreateDefaultSubobject<UVAltarAIBlackboard>(TEXT("Blackboard"));
     this->UnarmedAttackReach = 0.00f;
     this->PerceptionUpdateFrequency = 5.00f;
     this->bIsStickyCollisionStateEnabled = false;
@@ -101,12 +102,12 @@ AVPairedPawn::AVPairedPawn(const FObjectInitializer& ObjectInitializer) : Super(
     this->UnequipEvent = NULL;
     this->DamageRumbleEvent = NULL;
     this->StrengthEncumbranceMult = 5.00f;
-    // FIXME
-    //this->AkAudioComponent->SetupAttachment(RootComponent);
-    //this->FakeRoot->SetupAttachment(RootComponent);
-    //this->MainSkeletalMeshComponent->SetupAttachment(RootComponent);
-    //this->PhysicsBodyCollider->SetupAttachment(RootComponent);
-    //his->WorldLimitDetectionBox->SetupAttachment(RootComponent);
+    this->AkAudioComponent->SetupAttachment(RootComponent);
+    this->FakeRoot->SetupAttachment(RootComponent);
+    if (this->MainSkeletalMeshComponent != NULL) //FIXME
+        this->MainSkeletalMeshComponent->SetupAttachment(RootComponent);
+    this->PhysicsBodyCollider->SetupAttachment(RootComponent);
+    this->WorldLimitDetectionBox->SetupAttachment(RootComponent);
 }
 
 void AVPairedPawn::UpdateDrawnArrowVisibility() {

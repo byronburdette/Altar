@@ -2,13 +2,13 @@
 #include "Components/SceneComponent.h"
 
 ATestAnimCharacterBase::ATestAnimCharacterBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AttackRaycastStart = NULL;
+    this->AttackRaycastStart = CreateDefaultSubobject<USceneComponent>(TEXT("Attack Raycast Start"));
     this->AnimInstance = NULL;
     this->AttackRange = 0.00f;
     this->TurnTowardsMovement = false;
     this->HasWeaponDrawn = false;
     this->IsInDamageSection = false;
-    //FIXME this->AttackRaycastStart->SetupAttachment(RootComponent);
+    this->AttackRaycastStart->SetupAttachment(RootComponent);
 }
 
 void ATestAnimCharacterBase::SetAimPosition(FVector AimPosition) {

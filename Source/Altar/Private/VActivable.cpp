@@ -9,12 +9,12 @@
 
 AVActivable::AVActivable(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->RootComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalMeshComponent"));
-    this->TESRefComponent = NULL;
-    this->TransformPairingComponent = NULL;
-    this->AnimationObjectPairingComponent = NULL;
-    this->SkeletalMeshComponent = NULL;
-    this->PhysicsControllerComponent = NULL;
-    this->AkAudioComponent = NULL;
+    this->TESRefComponent = CreateDefaultSubobject<UVTESObjectRefComponent>(TEXT("TESObjectRefComponent"));
+    this->TransformPairingComponent = CreateDefaultSubobject<UVTransformPairingComponent>(TEXT("TransformPairingComponent"));
+    this->AnimationObjectPairingComponent = CreateDefaultSubobject<UVAnimationObjectPairingComponent>(TEXT("AnimationObjectPairingComponent"));
+    this->SkeletalMeshComponent = (USkeletalMeshComponent*)RootComponent;
+    this->PhysicsControllerComponent = CreateDefaultSubobject<UVPhysicsControllerComponent>(TEXT("PhysicsControllerComponent"));
+    this->AkAudioComponent = CreateDefaultSubobject<UVAltarAkComponent>(TEXT("AkAudioComponent"));
     this->bDoesDetonateItsProjectilesAsSoonAsTheyAppear = false;
     this->bChangeNavModifierAreaOnOpenCloseState = false;
     this->OpenNavArea = NULL;
@@ -25,7 +25,7 @@ AVActivable::AVActivable(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->bIsPortalOpened = false;
     this->OwnedNavModifierComponent = NULL;
     this->PortalComponent = NULL;
-    // fixme this->AkAudioComponent->SetupAttachment(RootComponent);
+    this->AkAudioComponent->SetupAttachment(RootComponent);
 }
 
 void AVActivable::TriggerActivateForPhysics() {

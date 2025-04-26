@@ -13,23 +13,23 @@ AVPairedCharacter::AVPairedCharacter(const FObjectInitializer& ObjectInitializer
     this->Sex = ECharacterSex::MALE;
     this->VoiceType = EVVoiceType::LEGACY;
     this->bUseDefaultRaceAndSexPreset = true;
-    this->PhenotypeData = NULL;
-    this->HumanoidHeadComponent = NULL;
-    this->HeadwearChildActorComponent = NULL;
-    this->UpperBodyChildActorComponent = NULL;
-    this->LowerBodyChildActorComponent = NULL;
-    this->HandsChildActorComponent = NULL;
-    this->FeetChildActorComponent = NULL;
-    this->AmuletChildActorComponent = NULL;
-    this->RightRingChildActorComponent = NULL;
-    this->LeftRingChildActorComponent = NULL;
-    this->CharacterBodyPairingComponent = NULL;
-    this->DockingPairingComponent = NULL;
-    this->HumanoidMotionWarpingComponent = NULL;
-    this->CharacterAppearancePairingComponent = NULL;
+    this->PhenotypeData = CreateDefaultSubobject<UVCharacterPhenotypeData>(TEXT("Phenotype"));
+    this->HumanoidHeadComponent = CreateDefaultSubobject<UVHumanoidHeadComponent>(TEXT("Head Component"));
+    const FProperty* p_Mesh_Parent = GetClass()->FindPropertyByName("Mesh");
+    this->HeadwearChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("Headwear"));
+    this->UpperBodyChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("Upper Body"));
+    this->LowerBodyChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("Lower Body"));
+    this->HandsChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("Hands"));
+    this->FeetChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("Feet"));
+    this->AmuletChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("Amulet"));
+    this->RightRingChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("Right Ring"));
+    this->LeftRingChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("Left Ring"));
+    this->CharacterBodyPairingComponent = CreateDefaultSubobject<UVCharacterBodyPairingComponent>(TEXT("Character Body Pairing Component"));
+    this->DockingPairingComponent = CreateDefaultSubobject<UVDockingPairingComponent>(TEXT("Docking Pairing Component"));
+    this->HumanoidMotionWarpingComponent = CreateDefaultSubobject<UMotionWarpingComponent>(TEXT("Motion Warping Component"));
+    this->CharacterAppearancePairingComponent = CreateDefaultSubobject<UVCharacterAppearancePairingComponent>(TEXT("Appearance"));
     this->EmotionBlendValueMultiplier = 0.50f;
     this->bHasUndockingQueued = false;
-    /* FIXME
     this->AmuletChildActorComponent->SetupAttachment(RootComponent);
     this->FeetChildActorComponent->SetupAttachment(RootComponent);
     this->HandsChildActorComponent->SetupAttachment(RootComponent);
@@ -39,7 +39,6 @@ AVPairedCharacter::AVPairedCharacter(const FObjectInitializer& ObjectInitializer
     this->LowerBodyChildActorComponent->SetupAttachment(RootComponent);
     this->RightRingChildActorComponent->SetupAttachment(RootComponent);
     this->UpperBodyChildActorComponent->SetupAttachment(RootComponent);
-    */
 }
 
 void AVPairedCharacter::WarpToDockingPosition() {
