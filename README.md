@@ -19,7 +19,7 @@ Search for `FIXME` to find all dummied out code you may want to fix if you need 
 Wwise plugin is a stub. That means you can't use it to actually work with WWise audio if you plan to do very in-depth wwise project recooking and restructuring. If you need that, you can remove the stub and install a real Wwise plugin v2023.1.8.8601.3258 - https://www.audiokinetic.com
 Rest of the plugins are irrelevant.
 
-# How to use
+## How to use
 1. Download UE 5.3.2 from Epic Launcher
-2. [Install requied build tools](https://github.com/EpicGames/UnrealEngine/blob/5.3.2-release/README.md#windows)
+2. [Install required build tools](https://github.com/EpicGames/UnrealEngine/blob/5.3.2-release/README.md#windows)
 3. Build the project
