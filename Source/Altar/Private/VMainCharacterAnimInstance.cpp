@@ -13,6 +13,7 @@ UVMainCharacterAnimInstance::UVMainCharacterAnimInstance() {
     this->bRecoilingRequest = false;
     this->bIsUsingFullBody = false;
     this->bIsWeaponDrawn = true;
+    this->bForceExitEquip = false;
     this->SpecialAndDynamicIdleAnimLayerClass = NULL;
     this->TorchAnimLayerClass = NULL;
     this->ShieldHandPoseAnimLayerClass = NULL;
@@ -54,6 +55,9 @@ void UVMainCharacterAnimInstance::SetPropertyLinkTable(const TArray<FCharacterPr
 }
 
 void UVMainCharacterAnimInstance::SetLocomotionLinkTable(const TArray<FCharacterPropertyLinkTable>& InLocomotionLinkTable) {
+}
+
+void UVMainCharacterAnimInstance::OnEquipStateEnter(const FAnimUpdateContext& Context, const FAnimNodeReference& Node) {
 }
 
 void UVMainCharacterAnimInstance::OnCombatStateFullyBlendedIn(const FAnimUpdateContext& Context, const FAnimNodeReference& Node) {

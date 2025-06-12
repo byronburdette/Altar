@@ -5,6 +5,7 @@
 #include "OriginalMaterial.h"
 #include "LocalMapComponent.generated.h"
 
+class ULocalMapManager;
 class UStaticMeshComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -18,6 +19,9 @@ public:
     TArray<FCutParameter> CutParameters;
     
 private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    ULocalMapManager* LocalMapManager;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TArray<FOriginalMaterial> OriginalMaterials;
     

@@ -8,5 +8,6 @@ FVSaveGameDetails::FVSaveGameDetails() {
     this->bIsESS = false;
     this->bNeedTheWholeGameDownloaded = false;
     this->bIsAchievementsDisabled = false;
+    this->bWasGameModded = false;
 }
 

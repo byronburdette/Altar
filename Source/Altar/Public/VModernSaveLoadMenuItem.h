@@ -23,7 +23,7 @@ private:
     FText TimeText;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString SavePlayerName;
+    FGuid SaveCharacterId;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString SaveGameSlot;
@@ -53,9 +53,6 @@ public:
     void SetSlotName(const FString& NewSlotName);
     
     UFUNCTION(BlueprintCallable)
-    void SetPlayerName(const FString& NewPlayerName);
-    
-    UFUNCTION(BlueprintCallable)
     void SetIsSectionHeader(const bool InNewBool);
     
     UFUNCTION(BlueprintCallable)
@@ -67,6 +64,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetIsAchievementDisabled(const bool InNewBool);
     
+    UFUNCTION(BlueprintCallable)
+    void SetCharacterId(const FGuid& NewCharacterId);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FText GetTimeText() const;
     
@@ -75,9 +75,6 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetSlotName() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    FString GetPlayerName() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsSectionHeader() const;
@@ -93,6 +90,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsAchievementDisabled() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FGuid GetCharacterId() const;
     
 };
 

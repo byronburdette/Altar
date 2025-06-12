@@ -74,10 +74,7 @@ void AVPairedCharacter::RefreshAppearanceAsync(EVCharacterRefreshSelector Select
 void AVPairedCharacter::RefreshAppearance(EVCharacterRefreshSelector Selector) {
 }
 
-void AVPairedCharacter::ProcessPendingUndockingRequest() {
-}
-
-void AVPairedCharacter::OnWeaponDrawnStateChanged(bool bIsWeaponDrawn) {
+void AVPairedCharacter::ProcessQueuedDockingRequest() {
 }
 
 void AVPairedCharacter::OnStartDockingToHorse() const {

@@ -16,4 +16,8 @@ FString UVAltarOnlineStoreBlueprintLibrary::GetDeluxeStoreId() {
     return TEXT("");
 }
 
+FString UVAltarOnlineStoreBlueprintLibrary::GetDeluxeContentId() {
+    return TEXT("");
+}
+
 

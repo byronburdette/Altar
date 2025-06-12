@@ -23,12 +23,6 @@ void UVAltarUISubsystem::UnregisterExponentialHeightFog(AExponentialHeightFog* I
 void UVAltarUISubsystem::TryGetBrushFromKey(FKey InKey, FSlateBrush& OutBrush) {
 }
 
-void UVAltarUISubsystem::ToggleInputHintVisibility(bool bIsVisible) {
-}
-
-void UVAltarUISubsystem::ToggleHUDVisibility(bool bIsVisible) {
-}
-
 void UVAltarUISubsystem::SetPlayerNameTextFromLastLoadedSave(const FText& InNewPlayerName) {
 }
 

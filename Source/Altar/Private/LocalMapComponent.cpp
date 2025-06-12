@@ -2,6 +2,7 @@
 
 ULocalMapComponent::ULocalMapComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->bReplaceAllSlotsWithDefaultCutParams = false;
+    this->LocalMapManager = NULL;
 }
 
 

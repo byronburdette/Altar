@@ -1,6 +1,7 @@
 #include "VNavigableEditableText.h"
 
 UVNavigableEditableText::UVNavigableEditableText() {
+    this->bAllowBackActionWhileEditing = true;
     this->EditableText = NULL;
 }
 

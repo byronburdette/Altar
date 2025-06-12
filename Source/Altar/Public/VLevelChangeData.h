@@ -51,6 +51,9 @@ public:
     TMap<FString, UVAssociatedAltarCellToPrePlacedActors*> AltarCellToPrePlacedActors;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FString> AltarCellKeyToTrimHandlers;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UVLevelStreaming> CurrentSubLevel;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -74,9 +77,19 @@ private:
     UFUNCTION(BlueprintCallable)
     void OnFadeToGameEndEventReceived();
     
+public:
+    UFUNCTION(BlueprintCallable)
+    void OnFadeToGameEnd();
+    
+private:
     UFUNCTION(BlueprintCallable)
     void OnFadeToGameBeginEventReceived();
     
+public:
+    UFUNCTION(BlueprintCallable)
+    void OnFadeToGameBegin();
+    
+private:
     UFUNCTION(BlueprintCallable)
     void OnFadeToGameAnimationOver();
     
@@ -92,15 +105,30 @@ private:
     UFUNCTION()
     void OnFadeToBlackEndEventReceived(EVFadeTransitionType InType);
     
+public:
+    UFUNCTION()
+    void OnFadeToBlackEnd(EVFadeTransitionType TransitionType);
+    
+private:
     UFUNCTION(BlueprintCallable)
     void OnFadeToBlackBeginEventReceived();
     
+public:
+    UFUNCTION(BlueprintCallable)
+    void OnFadeToBlackBegin();
+    
+private:
     UFUNCTION(BlueprintCallable)
     void OnFadeToBlackAnimationOverSeamless();
     
     UFUNCTION(BlueprintCallable)
     void OnFadeToBlackAnimationOverAttach();
     
+public:
+    UFUNCTION()
+    void OnFadeExtraDurationBegin(EVFadeTransitionType TransitionType, float Duration);
+    
+private:
     UFUNCTION(BlueprintCallable)
     void OnEndOfFadeToBlackInPlace();
     

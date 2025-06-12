@@ -1,5 +1,3 @@
-// FIXME not expored
-/*
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/InputDeviceProperties.h"
@@ -12,5 +10,5 @@ public:
     UVAltarFatigueTriggerResistance();
 
 };
-*/
+
 

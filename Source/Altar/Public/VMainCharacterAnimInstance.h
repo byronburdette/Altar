@@ -90,6 +90,9 @@ protected:
     bool bIsWeaponDrawn;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bForceExitEquip;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UAnimInstance> SpecialAndDynamicIdleAnimLayerClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -208,6 +211,9 @@ protected:
     
     UFUNCTION(BlueprintCallable)
     void SetLocomotionLinkTable(const TArray<FCharacterPropertyLinkTable>& InLocomotionLinkTable);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnEquipStateEnter(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);
     
     UFUNCTION(BlueprintCallable)
     void OnCombatStateFullyBlendedIn(const FAnimUpdateContext& Context, const FAnimNodeReference& Node);

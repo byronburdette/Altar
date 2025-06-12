@@ -135,6 +135,9 @@ public:
     FString GetCurrentPlayerName() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    FGuid GetCurrentPlayerCharacterId() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* FindOrAddGameThumbnailFromSlot(const FString& SlotName);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

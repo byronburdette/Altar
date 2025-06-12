@@ -39,6 +39,9 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FString, FInputText> IconSelectionMap;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ELegacyMapMenuPage LastMapPage;
+    
 public:
     UVMapMenuViewModel();
 
@@ -50,6 +53,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetQuestHistory(const TArray<FLegacyMapMenuQuestProperties>& NewQuestHistory);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetLastMap(ELegacyMapMenuPage NewLastMapPage);
     
     UFUNCTION(BlueprintCallable)
     void SetCurrentPage(const ELegacyMapMenuPage NewPage);
@@ -95,6 +101,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UVMapPageViewModel* GetLocalMapMenuViewModel() const;
+    
+    UFUNCTION(BlueprintCallable)
+    ELegacyMapMenuPage GetLastMap();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     ELegacyMapMenuPage GetCurrentPage() const;

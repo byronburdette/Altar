@@ -15,9 +15,9 @@ UVAltarUserInterfaceSettings::UVAltarUserInterfaceSettings() {
     this->FadeInExtraDurationFastTransition = 1.00f;
     this->FadeInExtraDurationPSOCompilation = 5.00f;
     this->FadeInDurationUntilUnfreeze = 0.50f;
-    this->ChangeListNumber = TEXT("233194");
-    this->FromMainCL = TEXT("230234");
-    this->StreamName = TEXT("Test");
+    this->ChangeListNumber = TEXT("235906");
+    this->FromMainCL = TEXT("235479");
+    this->StreamName = TEXT("Release");
     this->ProjectMajor = TEXT("0");
     this->ProjectMinor = TEXT("1");
     this->UserInterfaceSpecificMappingContext.AddDefaulted(46);

@@ -104,9 +104,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float EmotionBlendValueMultiplier;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bHasUndockingQueued;
-    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EBipedModularBodySlot, FInitialEquipmentInfo> InitialEquipmentMap;
@@ -153,13 +150,8 @@ public:
     void RefreshAppearance(EVCharacterRefreshSelector Selector);
     
     UFUNCTION(BlueprintCallable)
-    void ProcessPendingUndockingRequest();
+    void ProcessQueuedDockingRequest();
     
-protected:
-    UFUNCTION(BlueprintCallable)
-    void OnWeaponDrawnStateChanged(bool bIsWeaponDrawn);
-    
-public:
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void OnStartDockingToHorse() const;
     

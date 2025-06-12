@@ -10,6 +10,9 @@ UCLASS(Blueprintable)
 class UVAltarSaveMetaData : public USaveGame {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 Version;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FString, FVSaveGameDetails> AllSavesDetails;

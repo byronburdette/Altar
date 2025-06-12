@@ -16,9 +16,6 @@ void UVModernSaveLoadMenuItem::SetText(const FText& Value) {
 void UVModernSaveLoadMenuItem::SetSlotName(const FString& NewSlotName) {
 }
 
-void UVModernSaveLoadMenuItem::SetPlayerName(const FString& NewPlayerName) {
-}
-
 void UVModernSaveLoadMenuItem::SetIsSectionHeader(const bool InNewBool) {
 }
 
@@ -31,6 +28,9 @@ void UVModernSaveLoadMenuItem::SetIsExpanded(const bool InNewBool) {
 void UVModernSaveLoadMenuItem::SetIsAchievementDisabled(const bool InNewBool) {
 }
 
+void UVModernSaveLoadMenuItem::SetCharacterId(const FGuid& NewCharacterId) {
+}
+
 FText UVModernSaveLoadMenuItem::GetTimeText() const {
     return FText::GetEmpty();
 }
@@ -40,10 +40,6 @@ FText UVModernSaveLoadMenuItem::GetText() const {
 }
 
 FString UVModernSaveLoadMenuItem::GetSlotName() const {
-    return TEXT("");
-}
-
-FString UVModernSaveLoadMenuItem::GetPlayerName() const {
     return TEXT("");
 }
 
@@ -65,6 +61,10 @@ bool UVModernSaveLoadMenuItem::GetIsExpanded() const {
 
 bool UVModernSaveLoadMenuItem::GetIsAchievementDisabled() const {
     return false;
+}
+
+FGuid UVModernSaveLoadMenuItem::GetCharacterId() const {
+    return FGuid{};
 }
 
 

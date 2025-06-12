@@ -98,12 +98,6 @@ public:
     UFUNCTION(BlueprintCallable)
     void TryGetBrushFromKey(FKey InKey, FSlateBrush& OutBrush);
     
-    UFUNCTION(BlueprintCallable, Exec)
-    void ToggleInputHintVisibility(bool bIsVisible);
-    
-    UFUNCTION(BlueprintCallable, Exec)
-    void ToggleHUDVisibility(bool bIsVisible);
-    
     UFUNCTION(BlueprintCallable)
     void SetPlayerNameTextFromLastLoadedSave(const FText& InNewPlayerName);
     

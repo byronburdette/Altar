@@ -4,6 +4,7 @@ UVMapMenuViewModel::UVMapMenuViewModel() {
     this->CurrentPage = ELegacyMapMenuPage::LocalMap;
     this->LocalMapMenuViewModel = NULL;
     this->WorldMapMenuViewModel = NULL;
+    this->LastMapPage = ELegacyMapMenuPage::WorldMap;
 }
 
 void UVMapMenuViewModel::SetTitleProperties(const FLegacyMapMenuTitleProperties& NewTitleProperties) {
@@ -13,6 +14,9 @@ void UVMapMenuViewModel::SetQuests(const TArray<FLegacyMapMenuQuestProperties>& 
 }
 
 void UVMapMenuViewModel::SetQuestHistory(const TArray<FLegacyMapMenuQuestProperties>& NewQuestHistory) {
+}
+
+void UVMapMenuViewModel::SetLastMap(ELegacyMapMenuPage NewLastMapPage) {
 }
 
 void UVMapMenuViewModel::SetCurrentPage(const ELegacyMapMenuPage NewPage) {
@@ -63,6 +67,10 @@ TArray<FLegacyMapMenuQuestProperties> UVMapMenuViewModel::GetQuestHistory() cons
 
 UVMapPageViewModel* UVMapMenuViewModel::GetLocalMapMenuViewModel() const {
     return NULL;
+}
+
+ELegacyMapMenuPage UVMapMenuViewModel::GetLastMap() {
+    return ELegacyMapMenuPage::LocalMap;
 }
 
 ELegacyMapMenuPage UVMapMenuViewModel::GetCurrentPage() const {

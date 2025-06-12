@@ -18,6 +18,9 @@ public:
     
     AVAltarHud(const FObjectInitializer& ObjectInitializer);
 
+    UFUNCTION(BlueprintCallable, Exec)
+    void ToggleHUDVisibility();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UVPrimaryGameLayout* GetPrimaryGameLayout() const;
     

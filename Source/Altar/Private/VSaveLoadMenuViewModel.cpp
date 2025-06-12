@@ -107,6 +107,10 @@ FString UVSaveLoadMenuViewModel::GetCurrentPlayerName() const {
     return TEXT("");
 }
 
+FGuid UVSaveLoadMenuViewModel::GetCurrentPlayerCharacterId() const {
+    return FGuid{};
+}
+
 UTexture2D* UVSaveLoadMenuViewModel::FindOrAddGameThumbnailFromSlot(const FString& SlotName) {
     return NULL;
 }

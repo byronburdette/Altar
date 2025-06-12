@@ -1,9 +1,6 @@
-// FIXME not expored
-/*
 #include "VAltarBowTriggerResistance.h"
 
-UVAltarBowTriggerResistance::UVAltarBowTriggerResistance() {
+UVAltarBowTriggerResistance::UVAltarBowTriggerResistance() : UInputDeviceTriggerResistanceProperty() {
 }
-*/
 
 

@@ -5,6 +5,9 @@ AVAltarHud::AVAltarHud(const FObjectInitializer& ObjectInitializer) : Super(Obje
     this->bOblivionDebugTextIsVisible = false;
 }
 
+void AVAltarHud::ToggleHUDVisibility() {
+}
+
 UVPrimaryGameLayout* AVAltarHud::GetPrimaryGameLayout() const {
     return NULL;
 }
