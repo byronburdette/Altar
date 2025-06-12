@@ -29,7 +29,6 @@ AVPairedCharacter::AVPairedCharacter(const FObjectInitializer& ObjectInitializer
     this->HumanoidMotionWarpingComponent = CreateDefaultSubobject<UMotionWarpingComponent>(TEXT("Motion Warping Component"));
     this->CharacterAppearancePairingComponent = CreateDefaultSubobject<UVCharacterAppearancePairingComponent>(TEXT("Appearance"));
     this->EmotionBlendValueMultiplier = 0.50f;
-    this->bHasUndockingQueued = false;
     this->AmuletChildActorComponent->SetupAttachment(RootComponent);
     this->FeetChildActorComponent->SetupAttachment(RootComponent);
     this->HandsChildActorComponent->SetupAttachment(RootComponent);
