@@ -25,6 +25,9 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkAudioEvent* StopMusicEvent;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UAkAudioEvent* StopAllDialogueEvent;
+    
 public:
     AVMusicPlayer(const FObjectInitializer& ObjectInitializer);
 

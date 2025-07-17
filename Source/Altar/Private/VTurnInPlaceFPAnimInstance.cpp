@@ -12,6 +12,7 @@ UVTurnInPlaceFPAnimInstance::UVTurnInPlaceFPAnimInstance() {
     this->bIsTurningLeft = false;
     this->bIsUsingTorch = false;
     this->bIsSwimmingWithShield = false;
+    this->bIsSwimmingAndAimingWithBow = false;
 }
 
 

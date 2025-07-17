@@ -827,6 +827,9 @@ public:
     bool CanBlink() const;
     
     UFUNCTION(BlueprintCallable)
+    bool BringCapsuleBackToBody(bool bSnapToNavmesh);
+    
+    UFUNCTION(BlueprintCallable)
     void ApplyAndSaveConstraintProfile(const FName ProfileName);
     
     UFUNCTION(BlueprintCallable)

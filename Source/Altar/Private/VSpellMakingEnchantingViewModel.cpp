@@ -3,7 +3,7 @@
 UVSpellMakingEnchantingViewModel::UVSpellMakingEnchantingViewModel() {
     this->MagickaCost = 0;
     this->MaxMagickaCost = 0;
-    this->MagickaCostVisibility = false;
+    this->MagickaCostVisibility = true;
     this->bIsConstantEffect = false;
     this->bIsExceedingMaxMagickaCost = false;
     this->MaxUsage = 0;

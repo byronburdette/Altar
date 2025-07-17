@@ -45,6 +45,10 @@ protected:
     UFUNCTION(BlueprintCallable)
     void RegisterLayer(FGameplayTag LayerTag, UVActivatableWidgetStack* LayerWidget);
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnGameScreenshotCapturedDelegate(int32 InSizeX, int32 InSizeY, const TArray<FColor>& InImageData);
+    
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsLayerActive(const FGameplayTag& LayerTag) const;

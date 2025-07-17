@@ -17,6 +17,12 @@ void UVSettingsMenuViewModel::RegisterSendGameplaySaveSettings() {
 void UVSettingsMenuViewModel::RegisterSendGameDifficulty() {
 }
 
+void UVSettingsMenuViewModel::RegisterSendGameDamageTakenDifficulty() {
+}
+
+void UVSettingsMenuViewModel::RegisterSendGameDamageDealtDifficulty() {
+}
+
 void UVSettingsMenuViewModel::RegisterSendClickedButton(ELegacySettingsMenuIDs InButtonIndex) {
 }
 

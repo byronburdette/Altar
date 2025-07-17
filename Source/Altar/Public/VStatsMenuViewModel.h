@@ -62,6 +62,9 @@ public:
     UVStatsMenuViewModel();
 
     UFUNCTION(BlueprintCallable)
+    void UpdateSkillsProperties();
+    
+    UFUNCTION(BlueprintCallable)
     void UpdateOneSkillItemProperties(const int32 Index, const FLegacyStatsMenuSkillItemUpdatableProperties& NewSkillItemProperties);
     
     UFUNCTION(BlueprintCallable)

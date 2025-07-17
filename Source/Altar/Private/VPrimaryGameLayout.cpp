@@ -17,6 +17,9 @@ void UVPrimaryGameLayout::ResumeInputForPlayer(APlayerController* PlayerControll
 void UVPrimaryGameLayout::RegisterLayer(FGameplayTag LayerTag, UVActivatableWidgetStack* LayerWidget) {
 }
 
+void UVPrimaryGameLayout::OnGameScreenshotCapturedDelegate(int32 InSizeX, int32 InSizeY, const TArray<FColor>& InImageData) {
+}
+
 bool UVPrimaryGameLayout::IsLayerActive(const FGameplayTag& LayerTag) const {
     return false;
 }

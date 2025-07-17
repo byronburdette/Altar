@@ -7,6 +7,12 @@ AVAmbientDelimiter::AVAmbientDelimiter(const FObjectInitializer& ObjectInitializ
     this->StopDelimiterAmbientEvent = NULL;
     this->SplineWidth = 100.00f;
     this->SplineComponent = CreateDefaultSubobject<USplineComponent>(TEXT("Spline"));
+
+
+void AVAmbientDelimiter::OnLoadStarted() {
+}
+
+void AVAmbientDelimiter::OnLoadEnded() {
 }
 
 

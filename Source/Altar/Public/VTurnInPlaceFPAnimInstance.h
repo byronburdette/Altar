@@ -56,6 +56,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsSwimmingWithShield;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsSwimmingAndAimingWithBow;
+    
 public:
     UVTurnInPlaceFPAnimInstance();
 

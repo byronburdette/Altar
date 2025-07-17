@@ -1,7 +1,7 @@
 #include "VHitBoxComponent.h"
 
 UVHitBoxComponent::UVHitBoxComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ShapeBodySetup = NULL;
+    //FIXME this->ShapeBodySetup = NULL;
     this->TriggerFlags = 3;
     this->HitSourceMaterial = EVHitSourceMaterial::Metal;
     this->HitSourceWeaponType = EVHitSourceWeaponType::Other;

@@ -28,6 +28,12 @@ public:
     void RegisterSendGameDifficulty();
     
     UFUNCTION(BlueprintCallable)
+    void RegisterSendGameDamageTakenDifficulty();
+    
+    UFUNCTION(BlueprintCallable)
+    void RegisterSendGameDamageDealtDifficulty();
+    
+    UFUNCTION(BlueprintCallable)
     void RegisterSendClickedButton(ELegacySettingsMenuIDs InButtonIndex);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

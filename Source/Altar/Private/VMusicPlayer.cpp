@@ -5,6 +5,7 @@ AVMusicPlayer::AVMusicPlayer(const FObjectInitializer& ObjectInitializer) : Supe
     this->PauseMusicEvent = NULL;
     this->ResumeMusicEvent = NULL;
     this->StopMusicEvent = NULL;
+    this->StopAllDialogueEvent = NULL;
 }
 
 void AVMusicPlayer::PlayMainMenuMusic() {

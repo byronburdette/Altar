@@ -33,5 +33,12 @@ protected:
 public:
     AVAmbientDelimiter(const FObjectInitializer& ObjectInitializer);
 
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnLoadStarted();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnLoadEnded();
+    
 };
 

@@ -33,6 +33,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 SwimUpperBodyBlendDepth;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName SpellCastingBodyBoneName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 SpellCastingBodyBlendDepth;
+    
     ALTAR_API FVHumanoidLowerAndUpperBodySetup();
 };
 

@@ -21,5 +21,6 @@ enum class EModernSettingWidgetSubType : uint8 {
     AimAssistSensitivity,
     NoLocaToggle,
     GenericGamepadSettings,
+    VSync,
 };
 

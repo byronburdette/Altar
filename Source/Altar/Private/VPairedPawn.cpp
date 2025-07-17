@@ -535,6 +535,10 @@ bool AVPairedPawn::CanBlink() const {
     return false;
 }
 
+bool AVPairedPawn::BringCapsuleBackToBody(bool bSnapToNavmesh) {
+    return false;
+}
+
 void AVPairedPawn::ApplyAndSaveConstraintProfile(const FName ProfileName) {
 }
 

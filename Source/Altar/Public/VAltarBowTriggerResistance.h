@@ -1,3 +1,4 @@
+/* FIXME
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/InputDeviceProperties.h"
@@ -10,4 +11,4 @@ public:
     UVAltarBowTriggerResistance();
 
 };
-
+*/

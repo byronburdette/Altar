@@ -5,6 +5,9 @@ UVStatsMenuViewModel::UVStatsMenuViewModel() {
     this->AreDetailsDisplayed = true;
 }
 
+void UVStatsMenuViewModel::UpdateSkillsProperties() {
+}
+
 void UVStatsMenuViewModel::UpdateOneSkillItemProperties(const int32 Index, const FLegacyStatsMenuSkillItemUpdatableProperties& NewSkillItemProperties) {
 }
 
